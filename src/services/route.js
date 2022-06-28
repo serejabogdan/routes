@@ -1,4 +1,13 @@
+import {history} from '../store'
 
-import {createBrowserHistory} from 'history';
+function createRoute(route) {
+    return {
+        route,
+        push: () => history.push(route)
+    }
+}
 
-export const history = createBrowserHistory();
+export const ROUTES = {
+    HOME: createRoute('/'),
+    ABOUT: createRoute('/about'),
+}
